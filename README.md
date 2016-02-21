@@ -1,49 +1,54 @@
 React-xslider
 ====
 
-    >sliderÊÇÒ»¸öÂÖ²¥×é¼þ£¬ÊµÏÖÁËswiperµÄÖ÷Òª¹¦ÄÜ£¬×Ô¶¯²¥·Å£¬ÎÞÏÞÑ­»·£¬ÒÔ¼°swiper²»¾ß±¸µÄÀÁ¼ÓÔØÄ£Ê½¡£
+    >slideræ˜¯ä¸€ä¸ªè½®æ’­ç»„ä»¶ï¼Œå®žçŽ°äº†swiperçš„ä¸»è¦åŠŸèƒ½ï¼Œè‡ªåŠ¨æ’­æ”¾ï¼Œæ— é™å¾ªçŽ¯ï¼Œä»¥åŠswiperä¸å…·å¤‡çš„æ‡’åŠ è½½æ¨¡å¼ã€‚
 	
-## ÌØÐÔ
-	* Ìå»ýÐ¡£¬Ã»Ñ¹ËõµÄÔ´´úÂë²Å13kb
-	* ¹¦ÄÜ·á¸»£¬ÂéÈ¸ËäÐ¡£¬Ôà¸­¾ãÈ«
-	* ÀÁ¼ÓÔØ£¬Ìá¸ßÒÆ¶¯¶ËÒ³ÃæÐÔÄÜµÄÀûÆ÷
-	* ×Ô¶¨ÒåÑùÊ½£¬¼òµ¥ÊµÓÃ
+## ç‰¹æ€§
+	* ä½“ç§¯å°ï¼Œæ²¡åŽ‹ç¼©çš„æºä»£ç æ‰13kb
+	* åŠŸèƒ½ä¸°å¯Œï¼Œéº»é›€è™½å°ï¼Œè„è…‘ä¿±å…¨
+	* æ‡’åŠ è½½ï¼Œæé«˜ç§»åŠ¨ç«¯é¡µé¢æ€§èƒ½çš„åˆ©å™¨
+	* è‡ªå®šä¹‰æ ·å¼ï¼Œç®€å•å®žç”¨
 	
 --------
 	
-##ÒÀÀµ
+##ä¾èµ–
     <label>react</label>
     
 --------
 	
-##°²×°£º
-    > npm install react-xslider --save
+##å®‰è£…ï¼š
+    >npm install react-xslider --save
     
 --------
 
-##ËùÓÐÅäÖÃÏî props
+##æ‰€æœ‰é…ç½®é¡¹ props
 
-    <label>auto:</label> bool,  ÊÇ·ñ×Ô¶¯²¥·Å<br>
-    <label>speed:</label> number, ×Ô¶¯²¥·ÅÊ±¼ä¼ä¸ô<br>
-    <label>loop:</label> bool, ÊÇ·ñÎÞÏÞÑ­»·<br>
-    <label>lasy:</label> bool, ÊÇ·ñÀÁ¼ÓÔØ<br>
-    <label>paginationHide:</label> bool, ÊÇ·ñÒþ²Ø·ÖÒ³Æ÷<br>
+    auto: bool,  æ˜¯å¦è‡ªåŠ¨æ’­æ”¾
+    speed: number, è‡ªåŠ¨æ’­æ”¾æ—¶é—´é—´éš”
+    loop: bool, æ˜¯å¦æ— é™å¾ªçŽ¯
+    lasy: bool, æ˜¯å¦æ‡’åŠ è½½
+    paginationHide: bool, æ˜¯å¦éšè—åˆ†é¡µå™¨
 	
 --------
 
-    ###×î»ù±¾demo1
-	###×î»ù±¾demo2 auto×Ô¶¯²¥·Å
-	###×î»ù±¾demo3 loopÎÞÏÞÑ­»·
-	###×î»ù±¾demo4 lasyÀÁ¼ÓÔØÄ£Ê½
+###æœ€åŸºæœ¬demo1
+    
+###æœ€åŸºæœ¬demo2 autoè‡ªåŠ¨æ’­æ”¾
+
+###æœ€åŸºæœ¬demo3 loopæ— é™å¾ªçŽ¯
+
+###æœ€åŸºæœ¬demo4 lasyæ‡’åŠ è½½æ¨¡å¼
+
 	
-	ÀÁ¼ÓÔØÄ£Ê½£¬ÊÊÓÃÓÚitemsºÜ¶à, »òÕßÍ¼Æ¬ÀÁ¼ÓÔØµÄÇé¾°</h2>
-    domÖÐÓÀÔ¶¶¼Ö»¶¯Ì¬¼ÓÔØ3¸öslider-item£¬²»»áÒòÎªitemsºÜ¶àµ¼ÖÂÐÔÄÜÎÊÌâ<br>
-    ¿ÉÒÔÓÃÓÚÒ³ÃæÖ®¼äµÄÇÐ»»
+	æ‡’åŠ è½½æ¨¡å¼ï¼Œé€‚ç”¨äºŽitemså¾ˆå¤š, æˆ–è€…å›¾ç‰‡æ‡’åŠ è½½çš„æƒ…æ™¯</h2>
+    domä¸­æ°¸è¿œéƒ½åªåŠ¨æ€åŠ è½½3ä¸ªslider-itemï¼Œä¸ä¼šå› ä¸ºitemså¾ˆå¤šå¯¼è‡´æ€§èƒ½é—®é¢˜<br>
+    å¯ä»¥ç”¨äºŽé¡µé¢ä¹‹é—´çš„åˆ‡æ¢
 	
-	###×î»ù±¾demo5 paginationHide²»ÏÔÊ¾·ÖÒ³Æ÷
+###æœ€åŸºæœ¬demo5 paginationHideä¸æ˜¾ç¤ºåˆ†é¡µå™¨
 
 
-    ###×Ô¶¨Òå·ÖÒ³Æ÷ÑùÊ½
+###è‡ªå®šä¹‰åˆ†é¡µå™¨æ ·å¼
+
     ```
 		.slider-pagination {
 			position: absolute;
