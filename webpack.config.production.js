@@ -2,26 +2,17 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var cdnArr = [1, 2, 3],
-    cdn = 'http://web' + cdnArr[ Math.floor( Math.random() * cdnArr.length ) ] + '.waimai.bdimg.com';
 var md5 = new Date() * 1;
 
 module.exports = {
     entry: {
-        main: "./src/main"
-        // index: "./src/pages/index/IndexPage",
-        // detail: "./src/pages/detail/DetailPage",
-        // category: "./src/pages/category/CategoryPage",
-        // categoryDetail: "./src/pages/categoryItem/CategoryItemPage",
-        // topic: "./src/pages/topic/TopicPage",
+        main: "./examples/main"
     },
     output: {
         path: path.join(__dirname, 'build'),
         filename: 'main_'+md5+'.js',
-        chunkFilename: "[id].chunk_" + md5 +".js",
-        // publicPath: cdn + '/static/pinzhi2/', //网站运行时的访问路径
+        chunkFilename: "[name].chunk_" + md5 +".js",
         publicPath: '', //网站运行时的访问路径
-        //hash: true
     },
     // 依赖项是外部lib，遇到require它不需要编译
     externals: {
@@ -47,10 +38,9 @@ module.exports = {
             }
         }),
         // 用于提取多个入口文件的公共脚本部分，然后生成一个 common.js 来方便多页面之间进行复用
-        new webpack.optimize.CommonsChunkPlugin('common.js', ['./src/utils/Utils.js', './src/utils/eventPipe.js']),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: path.join(__dirname, '/src/index.html'),
+            template: path.join(__dirname, 'index.html'),
             inject: true
             //hash: true
         })
@@ -60,7 +50,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,// .js .jsx
                 loader: 'babel', // 'babel-loader' is also a legal name to reference
-                include: path.join(__dirname, 'src')
+                include: [path.join(__dirname, 'src'), path.join(__dirname, 'examples')]
             },
             {
                 test: /\.css$/,

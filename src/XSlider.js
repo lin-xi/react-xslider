@@ -1,8 +1,8 @@
-require('./slider.less');
+require('./xslider.less');
 
 var React = require('react');
 
-define('Slider', function(){
+define('XSlider', function(){
 
     return React.createClass({
         propTypes: {
@@ -46,24 +46,28 @@ define('Slider', function(){
             me.drawPagination();
 
             if(me.props.auto){
-                auto();
+                me.auto();
             }
+        },
 
-            function auto(){
-                var time = me.props.speed || 3000;
-                if(time < 300) time = 300;
+        auto: function(){
+            var me = this;
+            var time = me.props.speed || 3000;
+            if(time < 300) time = 300;
 
-                if(!me.hasNext()){
-                    if(!me.state.loop){
-                        setTimeout(function(){
-                            me.state.currentIndex = 0;
-                            me.state.curX = 0;
-                            me.draw(0, true);
-                            auto();
-                        }, time);
-                    }
-                } else {
+            if(!me.hasNext()){
+                if(!me.state.loop){
                     setTimeout(function(){
+                        me.state.currentIndex = 0;
+                        me.state.curX = 0;
+                        me.draw(0, true);
+                        me.auto();
+                    }, time);
+                }
+            } else {
+                if(me.state.timer){
+                    clearTimeout(me.state.timer);
+                    me.state.timer = setTimeout(function(){
                         me.next(function(){
                             auto();
                         });
@@ -178,6 +182,9 @@ define('Slider', function(){
             var tt = e.targetTouches[0];
             me.state.startX = tt.pageX;
             me.state.canDrag = true;
+            if(me.state.timer){
+                clearTimeout(me.state.timer);
+            }
             e.preventDefault();
         },
 
@@ -201,13 +208,24 @@ define('Slider', function(){
                 if (Math.abs(offX) > me.state.w / 6) {
                     if (offX > 0) {
                         //swipe right
-                        me.prev();
+                        me.prev(function(){
+                            if(me.props.auto){
+                                me.auto();
+                            }
+                        });
                     } else {
                         //siwpe left
-                        me.next();
+                        me.next(function(){
+                            if(me.props.auto){
+                                me.auto();
+                            }
+                        });
                     }
                 } else {
                     me.draw(0, true);
+                    if(me.props.auto){
+                        me.auto();
+                    }
                 }
             }
         },
@@ -345,8 +363,13 @@ define('Slider', function(){
                 var pager = this.refs.sliderWPager;
                 var locators = [];
                 for (var i = 0; i < me.state.total; i++) {
-                    var span;
-                    if(me.state.currentIndex == i){
+                    var span, idx;
+                    if(me.props.lasy){
+                        idx = i - 1;
+                    } else {
+                        idx = i;
+                    }
+                    if(me.state.currentIndex == idx){
                         span = '<span class="active"></span>';
                     } else {
                         span = '<span></span>';

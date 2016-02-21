@@ -1,4 +1,4 @@
-var Slider = require('../src/Slider');
+var Slider = require('../src/XSlider');
 
 var React = require('react');
 var ReactDom = require('react-dom');
