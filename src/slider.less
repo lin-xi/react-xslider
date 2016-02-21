@@ -1,0 +1,63 @@
+.component-slider{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+
+	.slider-wraper{
+		display: flex;
+		flex-direction: colum;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: stretch;
+		-webkit-transform: translate3d(0, 0, 0);
+
+		.slider-item{
+			top: 0;
+			width: 100%;
+			overflow: hidden;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.slider-pagination {
+		position: absolute;
+		bottom: 5px;
+		right: 20px;
+
+		span{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border-radius: 100%;
+			background-color: #ccc;
+			margin-right: 5px;
+		}
+		span.active{
+			background-color: #ff2d4b;
+		}
+	}
+	
+	.locator{
+		position: absolute; 
+		bottom: 0.3rem; right: 1rem; 
+		width: 50%; 
+		height: 1rem;
+		font-size: 0;
+		text-align: right;
+	}
+	.locator .locator-item{
+		display: inline-block; 
+		width: 0.5rem;
+		height: 0.5rem;
+		border-radius: 100%;
+		background-color: #ccc;
+		margin-right: 0.5rem;
+		-webkit-transition: all 0.5s cubic-bezier(0.99, 0, 0.66, 1);
+	}
+	.locator .locator-item.active{
+		background-color: #a55;
+	}
+}
+
