@@ -1,27 +1,27 @@
 React-xslider
 ====
 
-    > slider是一个轮播组件，实现了swiper的主要功能，自动播放，无限循环，以及swiper不具备的懒加载模式。
+    >slider是一个轮播组件，实现了swiper的主要功能，自动播放，无限循环，以及swiper不具备的懒加载模式。
 	
-    ## 特性
+## 特性
 	* 体积小，没压缩的源代码才13kb
 	* 功能丰富，麻雀虽小，脏腑俱全
 	* 懒加载，提高移动端页面性能的利器
 	* 自定义样式，简单实用
 	
-	--------
+--------
 	
-	##依赖
+##依赖
     <label>react</label>
     
-	--------
+--------
 	
-	##安装：
+##安装：
     > npm install react-xslider --save
     
-    --------
+--------
 
-    ##所有配置项 props
+##所有配置项 props
 
     <label>auto:</label> bool,  是否自动播放<br>
     <label>speed:</label> number, 自动播放时间间隔<br>
@@ -29,7 +29,7 @@ React-xslider
     <label>lasy:</label> bool, 是否懒加载<br>
     <label>paginationHide:</label> bool, 是否隐藏分页器<br>
 	
-    --------
+--------
 
     ###最基本demo1
 	###最基本demo2 auto自动播放
