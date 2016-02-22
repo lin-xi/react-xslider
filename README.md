@@ -31,23 +31,23 @@ React-xslider
 	
 --------
 
-###最基本demo1
+###[最基本demo1](http://lin-xi.github.io/react-xslider)
     
-###最基本demo2 auto自动播放
+###[最基本demo2 auto自动播放](http://lin-xi.github.io/react-xslider)
 
-###最基本demo3 loop无限循环
+###[最基本demo3 loop无限循环](http://lin-xi.github.io/react-xslider)
 
-###最基本demo4 lasy懒加载模式
+###[最基本demo4 lasy懒加载模式](http://lin-xi.github.io/react-xslider)
 
 	
 	懒加载模式，适用于items很多, 或者图片懒加载的情景</h2>
     dom中永远都只动态加载3个slider-item，不会因为items很多导致性能问题<br>
     可以用于页面之间的切换
 	
-###最基本demo5 paginationHide不显示分页器
+###[最基本demo5 paginationHide不显示分页器](http://lin-xi.github.io/react-xslider)
 
 
-###自定义分页器样式
+###[自定义分页器样式](http://lin-xi.github.io/react-xslider)
 
     ```
 		.slider-pagination {
