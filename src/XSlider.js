@@ -1,7 +1,5 @@
 require('./xslider.less');
 
-var React = require('react');
-
 define('XSlider', function(){
 
     return React.createClass({
@@ -50,6 +48,11 @@ define('XSlider', function(){
             }
         },
 
+        componentWillReceiveProps: function(nextProps){
+            var children = nextProps.children;
+            this.state.total = children.length;
+        },
+
         auto: function(){
             var me = this;
             var time = me.props.speed || 3000;
@@ -67,12 +70,12 @@ define('XSlider', function(){
             } else {
                 if(me.state.timer){
                     clearTimeout(me.state.timer);
-                    me.state.timer = setTimeout(function(){
-                        me.next(function(){
-                            auto();
-                        });
-                    }, time);
                 }
+                me.state.timer = setTimeout(function(){
+                    me.next(function(){
+                        me.auto();
+                    });
+                }, time);
             }
         },
 
@@ -230,7 +233,7 @@ define('XSlider', function(){
             }
         },
 
-        prev: function(){
+        prev: function(func){
             var me = this;
             if(me.hasPrev()){
                 me.draw(me.state.w, true, function(){
@@ -239,6 +242,7 @@ define('XSlider', function(){
                         me.setState(me.state);
                     }
                     me.drawPagination();
+                    func && func();
                 });
             } else {
                 me.draw(0, true);
